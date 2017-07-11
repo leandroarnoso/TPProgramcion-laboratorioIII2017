@@ -51,7 +51,7 @@
 
         $this->get('[/]', \AutoApi::class . ':TraerUno');
         
-        $this->get('lista[/]', \AutoApi::class . ':TraerTodos')
+        $this->get('/lista[/]', \AutoApi::class . ':TraerTodos')
             ->add(\MWparaAutentificar::class . ':VerificarPerfil');
 
         $this->get('/registros[/]', \AutoApi::class . ':TraerRegistros')
