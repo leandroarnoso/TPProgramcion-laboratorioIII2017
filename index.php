@@ -50,6 +50,9 @@
     $app->group('/auto', function () {
 
         $this->get('[/]', \AutoApi::class . ':TraerUno');
+        
+        $this->get('lista[/]', \AutoApi::class . ':TraerTodos')
+            ->add(\MWparaAutentificar::class . ':VerificarPerfil');
 
         $this->get('/registros[/]', \AutoApi::class . ':TraerRegistros')
             ->add(\MWparaAutentificar::class . ':VerificarPerfil');
