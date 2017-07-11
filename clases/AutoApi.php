@@ -21,6 +21,22 @@
 
             return $response;
         }
+        
+        public function TraerTodos($request, $response)
+        {
+            $parametros = $request->getQueryParams();
+            $arrayAutos = array();
+            $status = 500;
+
+            if (!$arrayAutos= Auto::ObtenerAutosBD())
+                $status = 404;
+            else
+                $status = 200;
+
+            $response = $response->withJson($arrayAutos, $status);
+
+            return $response;
+        } 
 
         public function TraerRegistros($request, $response) 
         { 
